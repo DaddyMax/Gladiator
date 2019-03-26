@@ -30,8 +30,10 @@ button
 		background-color: #fff
 		background-image: none
 	&-gray
-		background-color: #eee
-		background-image: none 
+		background-color: $color-gray
+		background-image: none
+.event 
+	margin-top: 0
 header
 	width: 980px
 	margin: 0 auto
@@ -63,7 +65,7 @@ header
 		color: #d3d3b6
 		margin: 15px auto
 .header__button
-	border: 3px solid #ff8400
+	border: 3px solid $color-orange
 	width: 343px
 	height: 62px
 	background-color: transparent
@@ -137,7 +139,23 @@ h1
 	margin: 0
 	span
 		color: $color-orange
-.game
+.photos
+	width: 30%
+	position: relative
+	margin-top: 63px
+	img
+		position: absolute
+		top: 0
+		left: 7px
+		width: 200px
+		height: 133px
+		border: 10px solid $color-premium
+		transition: all .2s
+		&:hover
+			cursor: pointer
+			border: 10px solid $color-orange
+			z-index: 1
+section
 	width: 980px
 	margin: 0 auto
 	color: #000
@@ -145,42 +163,103 @@ h1
 	flex-wrap: wrap
 	justify-content: space-around
 	padding-bottom: 70px
-	&__description
-		width: 60%
+.description
+	width: 60%
+	p
+		font-size: 1.6rem
+		font-weight: 400
+.game__description
 		p
-			font-size: 1.6rem
-			font-weight: 400
 			&:nth-child(3)
 				font-size: 2rem
 			&.list
 				padding-left: 60px
 				background: url(img/list-img.png) no-repeat 20px top
+.game__photos
+	img
+		&:nth-child(2)
+			top: 93px
+			left: 87px
+		&:nth-child(3)
+			top: 187px
+		&:nth-child(4)
+			top: 279px
+			left: 87px
+.event__description
+	p
+		font-size: 1.6rem
+		font-weight: 400
+		&.list
+			padding-left: 60px
+			position: relative
+			&:before
+				content: "1"
+				position: absolute
+				left: 25px
+				top: -3px
+				color: $color-orange
+				font-size: 2.4rem
+				font-weight: 700
+			&:nth-child(3):before
+				content: "2"
+			&:nth-child(4):before
+				content: "3"
+			&:nth-child(5):before
+				content: "4"
+.event
 	&__photos
-		width: 30%
+		margin-top: 50px
+	&__img
+		&:nth-child(2)
+			top: 93px
+			left: 87px
+		&:nth-child(3)
+			top: 187px
+		&:nth-child(4)
+			top: 279px
+			left: 87px
+.question
+	font-size: 2rem
+	margin-bottom: 20px
+	p
+		margin: 15px 0 0 20px
+		max-height: 0
+		padding: 0
+		overflow: hidden
+		transition: all .8s
+	span
+		border-bottom: 1px dashed #000
 		position: relative
-		margin-top: 63px
-		img
+		&:hover
+			cursor: pointer
+			color: $color-orange
+			border-bottom: 1px dashed $color-orange
+		&:before
+			content: ""
 			position: absolute
-			top: 0
-			left: 7px
-			width: 200px
-			height: 133px
-			border: 10px solid $color-premium
-			transition: all .2s
-			&:nth-child(1)
-				background: url(img/game_1.png) no-repeat
-			&:nth-child(2)
-				top: 93px
-				left: 87px
-				background: url(img/game_2.png) no-repeat
-			&:nth-child(3)
-				top: 187px
-				background: url(img/game_3.png) no-repeat
-			&:nth-child(4)
-				top: 279px
-				left: 87px
-				background: url(img/game_4.png) no-repeat
-			&:hover
-				cursor: pointer
-				border: 10px solid $color-orange
-				z-index: 1
+			top: 5px
+			left: -25px
+			width: 8px
+			height: 14px
+			background: url(img/accordeon_arrow.png) no-repeat
+.questions
+	padding-bottom: 40px
+	&__description
+		width: 80%
+		h1
+			margin-bottom: 25px
+			margin-left: -30px
+	&__photos
+		width: 90%
+		display: flex
+		justify-content: center
+	&__img
+		width: 200px
+		height: 133px
+		margin: 0 13px
+		border: 10px solid $color-premium
+		transition: all .2s
+		&:hover
+			cursor: pointer
+			border: 10px solid $color-orange
+			z-index: 1
