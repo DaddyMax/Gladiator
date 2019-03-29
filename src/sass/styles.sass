@@ -2,6 +2,15 @@ $color-orange: #ff8400
 $color-gray: #eee
 $color-inclusive: #f6f6df
 $color-premium: #f4f4f4
+.photo
+	width: 200px
+	height: 133px
+	border: 10px solid $color-premium
+	transition: all .2s
+	&:hover
+		cursor: pointer
+		border: 10px solid $color-orange
+		z-index: 1
 
 html
 	font-size: 62.5%
@@ -130,9 +139,6 @@ header
 	position: absolute
 	top: 64px
 	right: 15px
-section
-	position: relative
-	padding-top: 52px
 h1
 	font-size: 3rem
 	font-weight: 100
@@ -147,14 +153,6 @@ h1
 		position: absolute
 		top: 0
 		left: 7px
-		width: 200px
-		height: 133px
-		border: 10px solid $color-premium
-		transition: all .2s
-		&:hover
-			cursor: pointer
-			border: 10px solid $color-orange
-			z-index: 1
 section
 	width: 980px
 	margin: 0 auto
@@ -162,19 +160,21 @@ section
 	display: flex
 	flex-wrap: wrap
 	justify-content: space-around
+	position: relative
 	padding-bottom: 70px
+	padding-top: 52px
 .description
 	width: 60%
 	p
 		font-size: 1.6rem
 		font-weight: 400
 .game__description
-		p
-			&:nth-child(3)
-				font-size: 2rem
-			&.list
-				padding-left: 60px
-				background: url(img/list-img.png) no-repeat 20px top
+	p
+		&:nth-child(3)
+			font-size: 2rem
+		&.list
+			padding-left: 60px
+			background: url(img/list-img.png) no-repeat 20px top
 .game__photos
 	img
 		&:nth-child(2)
@@ -209,7 +209,7 @@ section
 .event
 	&__photos
 		margin-top: 50px
-	&__img
+	.photo
 		&:nth-child(2)
 			top: 93px
 			left: 87px
@@ -234,14 +234,15 @@ section
 			cursor: pointer
 			color: $color-orange
 			border-bottom: 1px dashed $color-orange
-		&:before
-			content: ""
-			position: absolute
-			top: 5px
-			left: -25px
-			width: 8px
-			height: 14px
-			background: url(img/accordeon_arrow.png) no-repeat
+.accordeon_arrow
+	content: ""
+	position: absolute
+	top: 5px
+	left: -25px
+	width: 8px
+	height: 14px
+	transition: transform .3s ease-out
+	background: url(img/accordeon_arrow.png) no-repeat
 .questions
 	padding-bottom: 40px
 	&__description
@@ -253,13 +254,154 @@ section
 		width: 90%
 		display: flex
 		justify-content: center
-	&__img
-		width: 200px
-		height: 133px
-		margin: 0 13px
-		border: 10px solid $color-premium
+		img
+			margin: 0 13px
+.reasons__description
+	display: flex
+	justify-content: center
+	flex-wrap: wrap
+	width: 100%
+	h1
+		width: calc(93% + 40px)
+		text-align: left
+.reason
+	width: 31%
+	margin: 30px 10px 0 10px
+	font-size: 1.6rem
+	span
+		font-size: 2.4rem
+		color: $color-orange
+	&__number
+		width: 46px
+		height: 46px
+		margin: 0 auto 18px auto
+		border-radius: 23px
+		background-color: #fff
+		font-size: 3.6rem
+		font-weight: 700
+		color: $color-orange
+		text-align: center
+		padding: 2px;
+	&__photos
+		display: flex
+		justify-content: center
+		flex-wrap: wrap
+		img
+			margin: 30px 12px 0 12px
+.image-wrap
+	text-align: center
+	font-size: 1.2rem
+	font-weight: 600
+.prices__description
+	width: 100%
+	display: flex
+	justify-content: space-between
+	flex-wrap: wrap
+	h1
+		width: 100%
+	.price_caption
+		width: 100%
+		font-size: 2rem
+		font-weight: 300
+		margin: 26px 0 29px 0
+.price-wrap
+	width: 31%
+.tariff
+	box-shadow: 0 0 5px rgba(44, 24, 5, 0.2)
+	position: relative
+	padding-bottom: 60px
+	height: 85%
+	p
+		margin: 0
+		padding-top: 6px
+		padding-bottom: 6px
+	&__title 
+		height: 65px
+		font-size: 2rem
+		text-align: center
+		padding-top: 15px
+		position: relative
+		&:after
+			content: ""
+			position: absolute
+			left: 0
+			right: 0
+			margin: auto
+			bottom: 5px
+			width: 8px
+			height: 14px
+			background: url(img/accordeon_arrow.png)
+			transform: rotate(90deg)
+	&__includes
+		height: 29px
+		font-size: 1.4rem
+		line-height: 29px
+		padding-left: 14px
+	&__btn
+		display: block
+		margin: 19px auto 0 auto
+		width: 70%
+		height: 39px
+		border: 3px solid $color-orange
+		outline: none
+		background-color: #fff
+		box-shadow: 0 6px 0 #a05f18
+		color: $color-orange
+		font-size: 2rem
+		cursor: pointer
 		transition: all .2s
 		&:hover
-			cursor: pointer
-			border: 10px solid $color-orange
+			background-color: #a05f18
+			color: #fff200
+	&__price
+		height: 45px
+		font-size: 1.8rem
+		text-align: center
+		line-height: 45px
+		position: absolute
+		bottom: 0
+		left: 0
+		right: 0
+		span
+			color: $color-orange
+	&__items
+		position: relative
+		padding-left: 60px
+		&:before
+			content: ""
+			position: absolute
+			left: 20px
+			top: 2px
+			width: 23px
+			height: 24px
+			background: url(img/list-img.png)
 			z-index: 1
+	&_1
+		background-color: #fff
+		.selected
+			background-color: $color-premium
+	&_2
+		background-color: $color-premium
+		.selected
+			background-color: $color-gray
+	&_3	
+		background-color: $color-inclusive
+		.selected
+			background-color: #fff
+.price_500
+	background-color: $color-premium
+.price_700, .price_900
+	background-color: #fff
+.includes_500 
+	background-color: $color-gray
+.includes_700 
+	background-color: #ddd
+.includes_900 
+	background-color: #d3d3b6
+.add_balls
+	width: 100%
+	font-size: 2rem
+	font-weight: 300
+	margin-top: 50px
+	span
+		color: $color-orange
