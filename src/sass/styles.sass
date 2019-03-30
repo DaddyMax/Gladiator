@@ -7,6 +7,7 @@ $color-premium: #f4f4f4
 	height: 133px
 	border: 10px solid $color-premium
 	transition: all .2s
+	box-shadow: 0 0 5px rgba(44, 24, 5, 0.2)
 	&:hover
 		cursor: pointer
 		border: 10px solid $color-orange
@@ -41,6 +42,13 @@ button
 	&-gray
 		background-color: $color-gray
 		background-image: none
+	&-map
+		height: 523px
+		background: url('img/map.png')
+	&-footer
+		background-image: none
+		padding-top: 30px
+		height: 120px
 .event 
 	margin-top: 0
 header
@@ -137,7 +145,7 @@ header
 	font-size: 1.2rem
 	padding-right: 24px
 	position: absolute
-	top: 64px
+	top: 53px
 	right: 15px
 h1
 	font-size: 3rem
@@ -162,7 +170,8 @@ section
 	justify-content: space-around
 	position: relative
 	padding-bottom: 70px
-	padding-top: 52px
+	/*padding-top: 52px*/
+	padding-top: 40px
 .description
 	width: 60%
 	p
@@ -292,18 +301,20 @@ section
 	text-align: center
 	font-size: 1.2rem
 	font-weight: 600
-.prices__description
-	width: 100%
-	display: flex
-	justify-content: space-between
-	flex-wrap: wrap
-	h1
+.prices
+	padding-bottom: 50px
+	&__description
 		width: 100%
-	.price_caption
-		width: 100%
-		font-size: 2rem
-		font-weight: 300
-		margin: 26px 0 29px 0
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+		h1
+			width: 100%
+		.price_caption
+			width: 100%
+			font-size: 2rem
+			font-weight: 300
+			margin: 26px 0 29px 0
 .price-wrap
 	width: 31%
 .tariff
@@ -405,3 +416,78 @@ section
 	margin-top: 50px
 	span
 		color: $color-orange
+.service
+	padding-bottom: 15px
+	&__description
+		width: 100%
+		position: relative
+		p
+			&.list
+				position: relative
+				padding-left: 60px
+				margin-top: 30px
+				line-height: 28px
+				span
+					color: #000
+					font-size: 2rem
+				&:before
+					content: "1"
+					position: absolute
+					left: 25px
+					top: -3px
+					color: $color-orange
+					font-size: 2.4rem
+					font-weight: 700
+				&:nth-child(3):before
+					content: "2"
+				&:nth-child(4):before
+					content: "3"
+				&:nth-child(5):before
+					content: "4"
+			&.service_additional
+				font-size: 2rem
+				font-weight: 300
+				line-height: 35px
+				span
+					color: $color-orange
+		.photo
+			position: absolute
+			right: 85px
+			top: 70px	
+.map
+	justify-content: flex-start
+	padding-top: 40px
+	h1
+		width: 100%
+	&__contacts 
+		width: 300px
+		height: 163px
+		background-color: #fff
+		opacity: 0.8
+		padding: 29px
+		font-weight: 300
+		font-size: 1.6rem
+		margin-top: 40px
+		span
+			font-size: 2rem
+			font-weight: 700
+			&:last-child
+				font-size: 1.6rem	
+footer
+	display: flex
+	justify-content: space-between	
+	align-items: flex-start
+	width: 980px
+	margin: 0 auto
+.footer-contants
+	font-size: 1.4rem
+	width: 50%
+.copyright
+	width: 165px
+	line-height: 27px
+	font-size: 1.2rem
+	background: url(img/copyright.png) no-repeat right top
+	a
+		color: #000
+.to-map
+	z-index: 1
