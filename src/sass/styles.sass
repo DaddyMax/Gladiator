@@ -2,19 +2,10 @@ $color-orange: #ff8400
 $color-gray: #eee
 $color-inclusive: #f6f6df
 $color-premium: #f4f4f4
-.photo
-	width: 200px
-	height: 133px
-	border: 10px solid $color-premium
-	transition: all .2s
-	box-shadow: 0 0 5px rgba(44, 24, 5, 0.2)
-	&:hover
-		cursor: pointer
-		border: 10px solid $color-orange
-		z-index: 1
 
 html
 	font-size: 62.5%
+	min-width: 320px
 body
 	margin: 0
 	padding: 0
@@ -49,10 +40,9 @@ button
 		background-image: none
 		padding-top: 30px
 		height: 120px
-.event 
-	margin-top: 0
 header
-	width: 980px
+	max-width: 980px
+	width: 100%
 	margin: 0 auto
 	color: #fff
 	display: flex
@@ -65,6 +55,7 @@ header
 	background: url(img/logo.png) no-repeat 10px 0
 .header__contacts
 	width: 32%
+	min-width: 300px
 	height: 120px
 	font-weight: 300
 	padding: 8px 0 0 2px
@@ -78,7 +69,8 @@ header
 	p
 		font-size: 3rem
 		font-weight: 100
-		width: 580px
+		width: 90%
+		max-width: 580px
 		color: #d3d3b6
 		margin: 15px auto
 .header__button
@@ -161,8 +153,18 @@ h1
 		position: absolute
 		top: 0
 		left: 7px
+.photo
+	width: 200px
+	height: 133px
+	border: 10px solid $color-premium
+	transition: all .2s
+	box-shadow: 0 0 5px rgba(44, 24, 5, 0.2)
+	&:hover
+		cursor: pointer
+		border: 10px solid $color-orange
+		z-index: 1
 section
-	width: 980px
+	max-width: 980px
 	margin: 0 auto
 	color: #000
 	display: flex
@@ -170,7 +172,6 @@ section
 	justify-content: space-around
 	position: relative
 	padding-bottom: 70px
-	/*padding-top: 52px*/
 	padding-top: 40px
 .description
 	width: 60%
@@ -185,7 +186,7 @@ section
 			padding-left: 60px
 			background: url(img/list-img.png) no-repeat 20px top
 .game__photos
-	img
+	.photo
 		&:nth-child(2)
 			top: 93px
 			left: 87px
@@ -216,6 +217,7 @@ section
 			&:nth-child(5):before
 				content: "4"
 .event
+	margin-top: 0
 	&__photos
 		margin-top: 50px
 	.photo
@@ -244,7 +246,6 @@ section
 			color: $color-orange
 			border-bottom: 1px dashed $color-orange
 .accordeon_arrow
-	content: ""
 	position: absolute
 	top: 5px
 	left: -25px
@@ -490,4 +491,123 @@ footer
 	a
 		color: #000
 .to-map
-	z-index: 1
+	z-index: 1	
+
+@media screen and (max-width: 980px) 
+	.game
+		flex-wrap: wrap
+	.next_section
+		position: static
+		width: 115px
+		margin: 0 50px 30px 50px 
+	.game__description
+		width: 85%
+	.event__description
+		width: 85%
+	.photos
+		width: 610px
+		height: 230px
+		margin-top: 30px
+	.game__photos
+		.photo
+			&:nth-child(1)
+				left: 0
+			&:nth-child(2)
+				top: 93px
+				left: 130px
+			&:nth-child(3)
+				top: 0
+				left: 260px
+			&:nth-child(4)
+				top: 93px
+				left: 390px
+	.event__photos
+		order: 1
+		.photo
+			&:nth-child(1)
+				left: 0
+			&:nth-child(2)
+				top: 93px
+				left: 130px
+			&:nth-child(3)
+				top: 0
+				left: 260px
+			&:nth-child(4)
+				top: 93px
+				left: 390px
+
+@media screen and (max-width: 610px) 
+	header
+		justify-content: center
+	.header__contacts,
+	.header__logo
+		width: 300px
+		padding: 0 14px
+		margin-top: 20px
+	.header__contacts
+		margin-top: 35px
+	.photos
+		width: 310px
+		height: 400px
+		margin-top: 20px
+	.game__photos
+		.photo
+			&:nth-child(1)
+				left: 7px
+			&:nth-child(2)
+				top: 93px
+				left: 87px
+			&:nth-child(3)
+				top: 187px
+				left: 7px
+			&:nth-child(4)
+				top: 279px
+				left: 87px
+	.event__photos
+		.photo
+			&:nth-child(1)
+				left: 7px
+			&:nth-child(2)
+				top: 93px
+				left: 87px
+			&:nth-child(3)
+				top: 187px
+				left: 7px
+			&:nth-child(4)
+				top: 279px
+				left: 87px
+	.questions__photos
+		flex-wrap: wrap
+		.photo
+			margin-top: 20px
+
+@media screen and (max-width: 480px) 
+	.header__text
+		font-size: 3rem
+		p
+			font-size: 2.5rem
+	.opportunity-title
+		font-size: 2.2rem
+	.opportunity
+		font-size: 1.6rem
+	.header__button
+		width: 70%
+		font-size: 2rem
+		margin-top: 30px
+	.event__description
+		p.list
+			padding-left: 30px
+			/*border: 1px solid black*/
+			&:before
+				left: 0
+	.question
+		font-size: 1.7rem
+		p
+			font-size: 1.5rem
+	.questions__description
+		padding-left: 10px
+		h1
+			margin-left: -10px
+
+	.accordeon_arrow
+		left: -20px

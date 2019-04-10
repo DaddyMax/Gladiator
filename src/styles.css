@@ -1,22 +1,6 @@
-.photo {
-  width: 200px;
-  height: 133px;
-  border: 10px solid #f4f4f4;
-  -webkit-transition: all .2s;
-  -o-transition: all .2s;
-  transition: all .2s;
-  -webkit-box-shadow: 0 0 5px rgba(44, 24, 5, 0.2);
-  box-shadow: 0 0 5px rgba(44, 24, 5, 0.2);
-}
-
-.photo:hover {
-  cursor: pointer;
-  border: 10px solid #ff8400;
-  z-index: 1;
-}
-
 html {
   font-size: 62.5%;
+  min-width: 320px;
 }
 
 body {
@@ -74,12 +58,9 @@ button:hover {
   height: 120px;
 }
 
-.event {
-  margin-top: 0;
-}
-
 header {
-  width: 980px;
+  max-width: 980px;
+  width: 100%;
   margin: 0 auto;
   color: #fff;
   display: -webkit-box;
@@ -104,6 +85,7 @@ header {
 
 .header__contacts {
   width: 32%;
+  min-width: 300px;
   height: 120px;
   font-weight: 300;
   padding: 8px 0 0 2px;
@@ -121,7 +103,8 @@ header {
 .header__text p {
   font-size: 3rem;
   font-weight: 100;
-  width: 580px;
+  width: 90%;
+  max-width: 580px;
   color: #d3d3b6;
   margin: 15px auto;
 }
@@ -251,8 +234,25 @@ h1 span {
   left: 7px;
 }
 
+.photo {
+  width: 200px;
+  height: 133px;
+  border: 10px solid #f4f4f4;
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+  -webkit-box-shadow: 0 0 5px rgba(44, 24, 5, 0.2);
+  box-shadow: 0 0 5px rgba(44, 24, 5, 0.2);
+}
+
+.photo:hover {
+  cursor: pointer;
+  border: 10px solid #ff8400;
+  z-index: 1;
+}
+
 section {
-  width: 980px;
+  max-width: 980px;
   margin: 0 auto;
   color: #000;
   display: -webkit-box;
@@ -267,7 +267,6 @@ section {
   justify-content: space-around;
   position: relative;
   padding-bottom: 70px;
-  /*padding-top: 52px*/
   padding-top: 40px;
 }
 
@@ -289,16 +288,16 @@ section {
   background: url(img/list-img.png) no-repeat 20px top;
 }
 
-.game__photos img:nth-child(2) {
+.game__photos .photo:nth-child(2) {
   top: 93px;
   left: 87px;
 }
 
-.game__photos img:nth-child(3) {
+.game__photos .photo:nth-child(3) {
   top: 187px;
 }
 
-.game__photos img:nth-child(4) {
+.game__photos .photo:nth-child(4) {
   top: 279px;
   left: 87px;
 }
@@ -333,6 +332,10 @@ section {
 
 .event__description p.list:nth-child(5):before {
   content: "4";
+}
+
+.event {
+  margin-top: 0;
 }
 
 .event__photos {
@@ -380,7 +383,6 @@ section {
 }
 
 .accordeon_arrow {
-  content: "";
   position: absolute;
   top: 5px;
   left: -25px;
@@ -805,4 +807,167 @@ footer {
 
 .to-map {
   z-index: 1;
+}
+
+@media screen and (max-width: 980px) {
+  .game {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .next_section {
+    position: static;
+    width: 115px;
+    margin: 0 50px 30px 50px;
+  }
+  .game__description {
+    width: 85%;
+  }
+  .event__description {
+    width: 85%;
+  }
+  .photos {
+    width: 610px;
+    height: 230px;
+    margin-top: 30px;
+  }
+  .game__photos .photo:nth-child(1) {
+    left: 0;
+  }
+  .game__photos .photo:nth-child(2) {
+    top: 93px;
+    left: 130px;
+  }
+  .game__photos .photo:nth-child(3) {
+    top: 0;
+    left: 260px;
+  }
+  .game__photos .photo:nth-child(4) {
+    top: 93px;
+    left: 390px;
+  }
+  .event__photos {
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+  }
+  .event__photos .photo:nth-child(1) {
+    left: 0;
+  }
+  .event__photos .photo:nth-child(2) {
+    top: 93px;
+    left: 130px;
+  }
+  .event__photos .photo:nth-child(3) {
+    top: 0;
+    left: 260px;
+  }
+  .event__photos .photo:nth-child(4) {
+    top: 93px;
+    left: 390px;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  header {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .header__contacts,
+  .header__logo {
+    width: 300px;
+    padding: 0 14px;
+    margin-top: 20px;
+  }
+  .header__contacts {
+    margin-top: 35px;
+  }
+  .photos {
+    width: 310px;
+    height: 400px;
+    margin-top: 20px;
+  }
+  .game__photos .photo:nth-child(1) {
+    left: 7px;
+  }
+  .game__photos .photo:nth-child(2) {
+    top: 93px;
+    left: 87px;
+  }
+  .game__photos .photo:nth-child(3) {
+    top: 187px;
+    left: 7px;
+  }
+  .game__photos .photo:nth-child(4) {
+    top: 279px;
+    left: 87px;
+  }
+  .event__photos .photo:nth-child(1) {
+    left: 7px;
+  }
+  .event__photos .photo:nth-child(2) {
+    top: 93px;
+    left: 87px;
+  }
+  .event__photos .photo:nth-child(3) {
+    top: 187px;
+    left: 7px;
+  }
+  .event__photos .photo:nth-child(4) {
+    top: 279px;
+    left: 87px;
+  }
+  .questions__photos {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .questions__photos .photo {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header__text {
+    font-size: 3rem;
+  }
+  .header__text p {
+    font-size: 2.5rem;
+  }
+  .opportunity-title {
+    font-size: 2.2rem;
+  }
+  .opportunity {
+    font-size: 1.6rem;
+  }
+  .header__button {
+    width: 70%;
+    font-size: 2rem;
+    margin-top: 30px;
+  }
+  .event__description p.list {
+    padding-left: 30px;
+    /*border: 1px solid black*/
+  }
+  .event__description p.list:before {
+    left: 0;
+  }
+  .question {
+    font-size: 1.7rem;
+  }
+  .question p {
+    font-size: 1.5rem;
+  }
+  .questions__description {
+    padding-left: 10px;
+  }
+  .questions__description h1 {
+    margin-left: -10px;
+  }
+  .accordeon_arrow {
+    left: -20px;
+  }
 }
