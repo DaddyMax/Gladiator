@@ -441,8 +441,8 @@ section {
 }
 
 .reasons__description h1 {
-  width: calc(93% + 40px);
-  text-align: left;
+  width: 93%;
+  margin-left: -30px;
 }
 
 .reason {
@@ -485,7 +485,7 @@ section {
 }
 
 .reason__photos img {
-  margin: 30px 12px 0 12px;
+  margin: 30px 10px 0 10px;
 }
 
 .image-wrap {
@@ -499,7 +499,7 @@ section {
 }
 
 .prices__description {
-  width: 100%;
+  width: 95%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -686,7 +686,7 @@ section {
 }
 
 .service__description {
-  width: 100%;
+  width: 95%;
   position: relative;
 }
 
@@ -706,21 +706,21 @@ section {
   content: "1";
   position: absolute;
   left: 25px;
-  top: -3px;
+  top: 0;
   color: #ff8400;
   font-size: 2.4rem;
   font-weight: 700;
 }
 
-.service__description p.list:nth-child(3):before {
+.service__description p.list:nth-child(4):before {
   content: "2";
 }
 
-.service__description p.list:nth-child(4):before {
+.service__description p.list:nth-child(5):before {
   content: "3";
 }
 
-.service__description p.list:nth-child(5):before {
+.service__description p.list:nth-child(6):before {
   content: "4";
 }
 
@@ -746,6 +746,7 @@ section {
   -ms-flex-pack: start;
   justify-content: flex-start;
   padding-top: 40px;
+  width: 90%;
 }
 
 .map h1 {
@@ -785,13 +786,14 @@ footer {
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
   align-items: flex-start;
-  width: 980px;
+  width: 90%;
+  max-width: 980px;
   margin: 0 auto;
 }
 
 .footer-contants {
   font-size: 1.4rem;
-  width: 50%;
+  width: 60%;
 }
 
 .copyright {
@@ -867,6 +869,62 @@ footer {
     top: 93px;
     left: 390px;
   }
+  .reason {
+    width: 40%;
+    margin: 30px 15px 0 15px;
+  }
+  .reasons__description h1 {
+    margin-left: 20px;
+  }
+  .prices__description {
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+  }
+  .prices__description h1 {
+    width: 90%;
+  }
+  .price_caption {
+    width: 90% !important;
+  }
+  .add_balls {
+    width: 90%;
+  }
+  .tariff__items {
+    padding-right: 7px;
+  }
+  .tariff {
+    padding-bottom: 70px;
+  }
+  .service__description {
+    width: 90%;
+  }
+  .service__description .photo {
+    position: static;
+    margin-left: 60px;
+  }
+  .wrapper-map {
+    background-position: 25%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .price-wrap {
+    width: 60%;
+    min-width: 320px;
+  }
+  .tariff {
+    padding-bottom: 55px;
+  }
+  .pw_2 {
+    margin-top: 30px;
+  }
+  .pw_3 {
+    margin-top: 25px;
+  }
+  .wrapper-map {
+    background-position: 40%;
+  }
 }
 
 @media screen and (max-width: 610px) {
@@ -928,6 +986,22 @@ footer {
   .questions__photos .photo {
     margin-top: 20px;
   }
+  .wrapper-map {
+    background-position: 50%;
+  }
+  footer {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .footer-contants {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .copyright {
+    margin: 5px auto;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -950,7 +1024,6 @@ footer {
   }
   .event__description p.list {
     padding-left: 30px;
-    /*border: 1px solid black*/
   }
   .event__description p.list:before {
     left: 0;
@@ -969,5 +1042,51 @@ footer {
   }
   .accordeon_arrow {
     left: -20px;
+  }
+  .reason {
+    width: 80%;
+  }
+  .reason img {
+    margin: 30px 10px 0 10px;
+  }
+  .image-wrap {
+    width: 75%;
+  }
+  .image-wrap:nth-child(1) {
+    margin-right: -10%;
+  }
+  .image-wrap:nth-child(2) {
+    margin-right: 10%;
+  }
+  .image-wrap:nth-child(3) {
+    margin-right: -10%;
+  }
+  .image-wrap:nth-child(4) {
+    margin-right: 10%;
+  }
+  .image-wrap:nth-child(5) {
+    margin-right: -10%;
+  }
+  .image-wrap:nth-child(6) {
+    margin-right: 10%;
+  }
+  .image-wrap:nth-child(7) {
+    margin-right: -10%;
+  }
+  .service__description .list {
+    padding-left: 30px !important;
+  }
+  .service__description .list:before {
+    left: 0 !important;
+  }
+  .service__description .photo {
+    margin-left: 30px;
+  }
+  .wrapper-map {
+    background-position: 57%;
+  }
+  .map__contacts {
+    margin-top: 150px;
+    padding: 27px;
   }
 }
